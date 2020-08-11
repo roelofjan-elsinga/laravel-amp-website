@@ -1,15 +1,41 @@
 
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="en">
 
-{%- include head.html -%}
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body>
+    {%- seo -%}
 
-<main class="page-content" aria-label="Content">
-    <div class="wrapper">
-        {{ content }}
-    </div>
+    {%- feed_meta -%}
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+
+    <script>
+        window['ga-disable-{{ site.google_analytics }}'] = window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1";
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ site.google_analytics }}');
+    </script>
+
+    <link rel="stylesheet" href="{{ site.data.manifest['docs.css'] | relative_url }}">
+
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+<header class="p-4 container mx-auto">
+    <a href="{% link index.md %}" class="text-amp font-bold underline">
+        Laravel AMP
+    </a>
+</header>
+
+<main class="container mx-auto flex-1" aria-label="Content">
+    {{ content }}
 </main>
 
 {%- include footer.html -%}

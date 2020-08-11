@@ -1,0 +1,35 @@
+<ul>
+    <li>
+        <a rel="me" class="text-white hover:underline"
+           href="https://github.com/{{ site.github_username | cgi_escape | escape }}"
+           title="{{ site.github_username | escape }}">
+            <svg class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use>
+            </svg>
+
+            <span>{{site.github_username}}</span>
+        </a>
+    </li>
+    <li>
+        <a rel="me" class="text-white hover:underline"
+           href="https://www.linkedin.com/in/{{ site.linkedin_username | cgi_escape | escape }}"
+           title="{{ site.linkedin_username | escape }}">
+            <svg class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#linkedin' | relative_url }}"></use>
+            </svg>
+
+            <span>{{site.linkedin_username}}</span>
+        </a>
+    </li>
+    <li>
+        <a rel="me" class="text-white hover:underline"
+           href="https://twitter.com/{{ site.twitter_username | cgi_escape | escape }}"
+           title="{{ site.twitter_username | escape }}">
+            <svg class="svg-icon grey">
+                <use xlink:href="{{ '/assets/minima-social-icons.svg#twitter' | relative_url }}"></use>
+            </svg>
+
+            <span>{{site.twitter_username}}</span>
+        </a>
+    </li>
+</ul>

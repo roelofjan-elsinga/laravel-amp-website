@@ -2,16 +2,15 @@
 layout: default
 ---
 
-<div class="home">
+<div class="pt-8 px-4 xl:px-0">
     {{ content }}
 
-    <h2>Latest news</h2>
+    <h2 class="mt-8 mb-4">Latest news</h2>
     {% if site.paginate %}
     {% assign posts = paginator.posts %}
     {% else %}
     {% assign posts = site.posts %}
     {% endif %}
-
 
     {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
@@ -21,7 +20,7 @@ layout: default
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
         <li>
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <span class="italic text-md text-gray-700">{{ post.date | date: date_format }}</span>
             <h3>
                 <a class="post-link" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
