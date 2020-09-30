@@ -1,3 +1,3 @@
 # Laravel AMP website
 
-Published on: https://sudodeepak.com
+Published on: https://amp-laravel.com
